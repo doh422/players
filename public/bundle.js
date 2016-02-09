@@ -49,7 +49,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
 	var Router = __webpack_require__(159).Router;
-	var routes = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./config/routes\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var routes = __webpack_require__(210);
 
 	ReactDOM.render(React.createElement(
 		Router,
@@ -24423,6 +24423,62 @@
 
 	exports['default'] = useBasename;
 	module.exports = exports['default'];
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Main = __webpack_require__(211);
+	var Home = __webpack_require__(212);
+	var Router = __webpack_require__(159);
+	var Route = Router.Route;
+
+	module.exports = React.createElement(Route, { path: '/', component: Main });
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Main = React.createClass({
+		displayName: 'Main',
+
+		render: function render() {
+			return React.createElement(
+				'h1',
+				null,
+				'Players'
+			);
+		}
+	});
+
+	module.exports = Main;
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Home = React.createClass({
+		displayName: 'Home',
+
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				'Search By Player Name'
+			);
+		}
+	});
 
 /***/ }
 /******/ ]);
