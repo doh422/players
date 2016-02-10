@@ -24467,7 +24467,7 @@
 				),
 				React.createElement(
 					"div",
-					{ className: "container" },
+					{ className: "col-md-10" },
 					this.props.children
 				)
 			);
@@ -24506,6 +24506,8 @@
 
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(159);
+	var Player = __webpack_require__(214);
+	var Stat = __webpack_require__(215);
 
 	var Profile = React.createClass({
 		displayName: 'Profile',
@@ -24520,14 +24522,67 @@
 
 		render: function render() {
 			return React.createElement(
-				'h1',
-				null,
-				'Profiles'
+				'div',
+				{ className: 'row' },
+				React.createElement(
+					'div',
+					{ className: 'col-md-6' },
+					React.createElement(Player, null)
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-md-6' },
+					React.createElement(Stat, null)
+				)
 			);
 		}
 	});
 
 	module.exports = Profile;
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Player = React.createClass({
+		displayName: 'Player',
+
+		render: function render() {
+			return React.createElement(
+				'h3',
+				null,
+				'Player Name'
+			);
+		}
+	});
+
+	module.exports = Player;
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Stat = React.createClass({
+		displayName: 'Stat',
+
+		render: function render() {
+			return React.createElement(
+				'h3',
+				null,
+				'Statssss'
+			);
+		}
+	});
+
+	module.exports = Stat;
 
 /***/ }
 /******/ ]);
