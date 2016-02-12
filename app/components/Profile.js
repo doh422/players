@@ -5,12 +5,16 @@ var Stat = require('./Player/Stat');
 var ReactFireMixin = require('reactfire');
 
 var Profile = React.createClass({
-	mixin: [ReactFireMixin],
+	// mixin: [ReactFireMixin],
 	getInitialState: function() {
 		return {
 			bio: {},
-			stats: {}
+			stats: [1,2,3]
 		}
+	},
+
+	componentDidMount: function() {
+		console.log('mounted');
 	},
 
 	render: function() {
@@ -20,7 +24,7 @@ var Profile = React.createClass({
 					<Player name={this.props.params.name} bio={this.state.bio} />
 				</div>
 				<div className="col-md-6">
-					<Stat stats={this.state.stats} />
+					<Stat name={this.props.params.name} stats={this.state.stats} />
 				</div>
 			</div>
 		)
