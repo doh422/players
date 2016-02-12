@@ -24527,12 +24527,12 @@
 				React.createElement(
 					'div',
 					{ className: 'col-md-6' },
-					React.createElement(Player, null)
+					React.createElement(Player, { name: this.props.params.name, bio: this.state.bio })
 				),
 				React.createElement(
 					'div',
 					{ className: 'col-md-6' },
-					React.createElement(Stat, null)
+					React.createElement(Stat, { stats: this.state.stats })
 				)
 			);
 		}
@@ -24553,9 +24553,13 @@
 
 		render: function render() {
 			return React.createElement(
-				'h3',
+				'div',
 				null,
-				'Player Name'
+				React.createElement(
+					'h3',
+					null,
+					'Player Name'
+				)
 			);
 		}
 	});
