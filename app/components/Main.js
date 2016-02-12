@@ -1,11 +1,16 @@
 var React = require('react');
+var SearchPlayer = require('./SearchPlayer');
 
 var Main = React.createClass({
 	render: function() {
 		return (
 			<div className="main-container">
-				<h1>Players</h1>
-				<div className="col-md-10">
+				<nav className="navbar navbar-default" role="navigation">
+					<div className="col-sm-7 col-sm-offset-2" style={{marginTop:15}}>
+						<SearchPlayer />
+					</div>
+				</nav>
+				<div className="container">
 					{this.props.children}
 				</div>
 			</div>

@@ -24449,25 +24449,30 @@
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
+	var SearchPlayer = __webpack_require__(217);
 
 	var Main = React.createClass({
-		displayName: "Main",
+		displayName: 'Main',
 
 		render: function render() {
 			return React.createElement(
-				"div",
-				{ className: "main-container" },
+				'div',
+				{ className: 'main-container' },
 				React.createElement(
-					"h1",
-					null,
-					"Players"
+					'nav',
+					{ className: 'navbar navbar-default', role: 'navigation' },
+					React.createElement(
+						'div',
+						{ className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
+						React.createElement(SearchPlayer, null)
+					)
 				),
 				React.createElement(
-					"div",
-					{ className: "col-md-10" },
+					'div',
+					{ className: 'container' },
 					this.props.children
 				)
 			);
@@ -24972,6 +24977,58 @@
 	  return ReactFireMixin;
 	}));
 
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(159);
+
+	var SearchPlayer = React.createClass({
+		displayName: 'SearchPlayer',
+
+		mixins: [Router.History],
+		getRef: function getRef(ref) {
+			this.nameRef = ref;
+		},
+
+		handleSubmit: function handleSubmit() {
+			var name = this.nameRef.value;
+			this.nameRef.value = '';
+			// push state allows us to transition to new route
+			this.history.pushState(null, "profile/" + name);
+		},
+
+		render: function render() {
+			return React.createElement(
+				'div',
+				{ className: 'col-sm-12' },
+				React.createElement(
+					'form',
+					{ onClick: this.handleSubmit },
+					React.createElement(
+						'div',
+						{ className: 'form-group col-sm-7' },
+						React.createElement('input', { type: 'text', className: 'form-control', ref: this.getRef })
+					),
+					React.createElement(
+						'div',
+						{ className: 'form-group col-sm-5' },
+						React.createElement(
+							'button',
+							{ type: 'submit', className: 'btn btn-block btn-primary' },
+							'Search Player'
+						)
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = SearchPlayer;
 
 /***/ }
 /******/ ]);
